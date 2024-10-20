@@ -104,4 +104,26 @@ body {
     border-radius: 10px; /* 可選：圓角 */
 }
 
+.rsvp-form {
+    padding: 20px;
+    background-image: url('imgs/button_content_background.jpg'); /* 替換為你的背景圖 URL */
+    background-size: cover; /* 背景圖片覆蓋整個區域 */
+    background-position: center; /* 背景圖片居中 */
+    border-radius: 5px; /* 可选：圆角 */
+}
+
+.rsvp-form label {
+    display: block; /* 每个标签独占一行 */
+    margin-top: 10px; /* 增加上边距 */
+}
+
+.rsvp-form input, .rsvp-form textarea {
+    width: 100%; /* 填满宽度 */
+    padding: 8px; /* 内边距 */
+    margin-top: 5px; /* 增加上边距 */
+    border: 1px solid #ccc; /* 边框颜色 */
+    border-radius: 4px; /* 圆角 */
+}
+
+
 

@@ -12,9 +12,37 @@
             background-color: white;
         }
 
-        .content-background p {
+        .content-background p,
+        .content-background label {
             margin: 10px 0;
             line-height: 1.5;
+            display: block; /* 確保 label 和 p 佔據一整行 */
+            color: black; /* 設置 label 的文字顏色為黑色 */
+        }
+
+        /* 使輸入框和按鈕有一致的樣式 */
+        input[type="text"],
+        input[type="tel"],
+        input[type="number"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .custom-button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .custom-button:hover {
+            background-color: #45a049;
         }
     </style>
 </head>
@@ -41,11 +69,12 @@
             <div id="invitation-details" class="invitation-details" style="display: none;">
                 <div class="content-background">
                     <p>今逢周爺爺80大壽，幸得身體安康，精神飽滿。</p>
-                    <p>感謝諸親好友平日敦誼，</pp>
+                    <p>感謝諸親好友平日敦誼，</p>
                     <p>訂於2024年12月28日中午12時舉辦壽宴，</p>
                     <p>誠摯邀請您闔家光臨。</p>
                 </div>
             </div>
+
             <button class="custom-button" onclick="toggleMap()">宴會地圖</button>
             
             <!-- 展開內容區域 -->
@@ -62,7 +91,30 @@
                     </iframe>
                 </div>
             </div>
+
+            <!-- 新增宴會回函按鈕 -->
+            <button class="custom-button" onclick="toggleRSVPForm()">宴會回函</button>
+
+            <!-- 展開回函表單 -->
+            <div id="rsvp-form" class="rsvp-form" style="display: none;">
+                <div class="content-background">
+                    <form>
+                        <label for="name">姓名:</label>
+                        <input type="text" id="name" name="name" required>
+                        <label for="contact">聯絡電話:</label>
+                        <input type="tel" id="contact" name="contact" required>
+                        <label for="guests">參加人數:</label>
+                        <input type="number" id="guests" name="guests" min="1" required>
+                        <label for="comments">備註:</label>
+                        <textarea id="comments" name="comments" rows="4"></textarea>
+                        <button type="submit" class="custom-button">提交回函</button>
+                    </form>
+                </div>
+            </div>
         </div>
+        <!-- 日期顯示 -->
+         <p></p>
+        <p class="author">由 Sandy Chou 編輯</p>
     </div>
 
     <script>
@@ -81,6 +133,15 @@
                 destination.style.display = 'block';
             } else {
                 destination.style.display = 'none';
+            }
+        }
+
+        function toggleRSVPForm() {
+            const rsvpForm = document.getElementById('rsvp-form');
+            if (rsvpForm.style.display === 'none') {
+                rsvpForm.style.display = 'block';
+            } else {
+                rsvpForm.style.display = 'none';
             }
         }
     </script>
