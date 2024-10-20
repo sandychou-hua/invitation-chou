@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>長輩大壽邀請</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 標題區塊 -->
+        <div class="header-text">
+            <h1>周先生八十大壽邀請</h1>
+        </div>
+
+        <!-- 大壽圖片區塊 -->
+        <div class="header">
+            <img src="imgs/background.jpg" alt="大壽背景圖" class="header-image">
+        </div>
+
+        <!-- 日期顯示 -->
+        <p class="date-text">2024年12月28日</p>
+
+        <!-- 按鈕區塊 -->
+        <div class="button-container">
+            <button class="custom-button" onclick="toggleInvitation()">壽宴邀請</button>
+            
+            <!-- 展開內容區域 -->
+            <div id="invitation-details" class="invitation-details" style="display: none;">
+                <div class="content-background">
+                    <img src="imgs/button_content_background.jpg" alt="大壽背景圖" class="button-background">
+                    <p>誠摯歡迎大家...</p>
+                </div>
+            </div>
+            <button class="custom-button">宴會回函</button>
+            <button class="custom-button">宴會地圖</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleInvitation() {
+            const details = document.getElementById('invitation-details');
+            if (details.style.display === 'none') {
+                details.style.display = 'block';
+            } else {
+                details.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

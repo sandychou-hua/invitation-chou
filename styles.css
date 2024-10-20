@@ -1,0 +1,90 @@
+body {
+    background-color: #8b0000; /* 深紅背景色 */
+    color: #fff;
+    font-family: "KaiTi", "DFKai-SB", "Microsoft JhengHei", sans-serif; /* 設置楷書字體 */
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.header {
+    position: relative;
+    text-align: center;
+}
+
+.header-image {
+    width: 100%;
+    height: auto;
+}
+
+.header-text {
+    color: #ffd700; /* 金色字體 */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* 增加陰影 */
+}
+
+.header h1 {
+    font-size: 28px;
+    margin: 0;
+}
+
+.date-text {
+    font-size: 20px;
+    margin: 10px 0; /* 增加間距 */
+    color: #ffd700; /* 金色字體 */
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+    align-items: center; /* 置中按鈕 */
+}
+
+.custom-button {
+    background: linear-gradient(90deg, #ffd700 0%, #8b4513 100%); /* 金色到棕色漸變 */
+    border: none;
+    color: #fff;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    width: 80%; /* 設定按鈕寬度 */
+    max-width: 400px; /* 可選：限制按鈕的最大寬度 */
+    transition: background 0.3s; /* 按鈕背景過渡效果 */
+}
+
+.custom-button:hover {
+    background: linear-gradient(90deg, #8b4513 0%, #ffd700 100%); /* 改變懸停效果 */
+}
+
+.invitation-details {
+    margin-top: 20px; /* 增加上邊距 */
+}
+
+.content-background {
+    position: relative; /* 使其內部元素可絕對定位 */
+}
+
+.button-background {
+    width: 100%; /* 背景圖佔滿容器 */
+    height: auto;
+}
+
+.content-background p {
+    position: absolute; /* 絕對定位 */
+    top: 0; /* 置於最上方 */
+    left: 50%; /* 水平置中 */
+    transform: translateX(-50%); /* 水平置中 */
+    font-size: 24px; /* 調整字體大小 */
+    color: #000; /* 黑色字體 */
+    text-shadow: none; /* 取消陰影 */
+    margin: 10px 0; /* 可選：增加上邊距 */
+}
