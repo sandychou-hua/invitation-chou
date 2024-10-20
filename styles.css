@@ -79,12 +79,11 @@ body {
 }
 
 .content-background p {
-    position: absolute; /* 絕對定位 */
+    position: relative; /* 相對定位 */
     top: 0; /* 置於最上方 */
     left: 50%; /* 水平置中 */
     transform: translateX(-50%); /* 水平置中 */
-    font-size: 24px; /* 調整字體大小 */
+    font-size: 20px; /* 調整字體大小 */
     color: #000; /* 黑色字體 */
     text-shadow: none; /* 取消陰影 */
-    margin: 10px 0; /* 可選：增加上邊距 */
 }
