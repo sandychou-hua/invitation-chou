@@ -44,13 +44,17 @@
         .custom-button:hover {
             background-color: #45a049;
         }
+
+        .map-spacing {
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <!-- 標題區塊 -->
         <div class="header-text">
-            <h1>周先生八十大壽邀請</h1>
+            <h1>周爺爺八十大壽邀請</h1>
         </div>
 
         <!-- 大壽圖片區塊 -->
@@ -68,81 +72,64 @@
             <!-- 展開內容區域 -->
             <div id="invitation-details" class="invitation-details" style="display: none;">
                 <div class="content-background">
-                    <p>今逢周爺爺80大壽，幸得身體安康，精神飽滿。</p>
+                    <p>今逢周爺爺 80 大壽，幸得身體安康，精神飽滿。</p>
                     <p>感謝諸親好友平日敦誼，</p>
-                    <p>訂於2024年12月28日中午12時舉辦壽宴，</p>
+                    <p>訂於 2024 年 12 月 28 日 中午 12 時舉辦壽宴，</p>
                     <p>誠摯邀請您闔家光臨。</p>
                 </div>
+                <img src="imgs/family_pic.jpg" alt="大壽背景圖" class="header-image">
+                <img src="imgs/family_pic_2.jpg" alt="大壽背景圖" class="header-image">
             </div>
+            
+            <button class="custom-button" onclick="window.open('https://daosiangcun.com.tw/', '_blank')">餐廳介紹</button>
 
             <button class="custom-button" onclick="toggleMap()">宴會地圖</button>
-            
-            <!-- 展開內容區域 -->
+
+            <!-- 展開地圖內容區域 -->
             <div id="destination" class="destination" style="display: none;">
                 <div class="content-background">
-                    <p>台北101位置</p>
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1996.0301887925308!2d121.56372871401656!3d25.03396498398285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442abf8c4e375e9%3A0xf09c27b15455e8e6!2z6YeR5Y2A5biC5ZC75a6A5ZyX5aWw5LiJ5LiA5aSn6Ieq5ZyO5ZyW5L2N5LiA6KaB5bu66KiW!5e0!3m2!1szh-TW!2stw!4v1692263914930!5m2!1szh-TW!2stw" 
-                        width="600" 
-                        height="450" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy">
-                    </iframe>
-                </div>
-            </div>
-
-            <!-- 新增宴會回函按鈕 -->
-            <button class="custom-button" onclick="toggleRSVPForm()">宴會回函</button>
-
-            <!-- 展開回函表單 -->
-            <div id="rsvp-form" class="rsvp-form" style="display: none;">
-                <div class="content-background">
-                    <form>
-                        <label for="name">姓名:</label>
-                        <input type="text" id="name" name="name" required>
-                        <label for="contact">聯絡電話:</label>
-                        <input type="tel" id="contact" name="contact" required>
-                        <label for="guests">參加人數:</label>
-                        <input type="number" id="guests" name="guests" min="1" required>
-                        <label for="comments">備註:</label>
-                        <textarea id="comments" name="comments" rows="4"></textarea>
-                        <button type="submit" class="custom-button">提交回函</button>
-                    </form>
+                    <p>稻鄉村</p>
+                    <p>桃園市龜山區忠義路二段118巷69號</p>
+                    <button class="custom-button" onclick="navigateTo()">點我，直接導航至宴會地點</button>
+                    <div class="map-spacing">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3620.0481994161114!2d121.36575881530947!3d25.02105508397719!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346822911e43c0e5%3A0xf86e3d9c4e7b1d7d!2z6Jit5rCR5Y2A5p2x5ZyL5aSn6IiI6LOi5q61MTE45be3NjnovZ8!5e0!3m2!1szh-TW!2stw!4v1692263914930!5m2!1szh-TW!2stw" 
+                            width="600" 
+                            height="450" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- 日期顯示 -->
-         <p></p>
+
         <p class="author">由 Sandy Chou 編輯</p>
     </div>
 
     <script>
         function toggleInvitation() {
             const details = document.getElementById('invitation-details');
-            if (details.style.display === 'none') {
-                details.style.display = 'block';
-            } else {
-                details.style.display = 'none';
-            }
+            details.style.display = details.style.display === 'none' ? 'block' : 'none';
         }
 
         function toggleMap() {
             const destination = document.getElementById('destination');
-            if (destination.style.display === 'none') {
-                destination.style.display = 'block';
-            } else {
-                destination.style.display = 'none';
-            }
+            destination.style.display = destination.style.display === 'none' ? 'block' : 'none';
         }
-
-        function toggleRSVPForm() {
-            const rsvpForm = document.getElementById('rsvp-form');
-            if (rsvpForm.style.display === 'none') {
-                rsvpForm.style.display = 'block';
-            } else {
-                rsvpForm.style.display = 'none';
-            }
+    
+        // function navigateTo() {
+        //     // 使用 Google Maps 的導航 URL 格式
+        //     const lat = 25.042548;
+        //     const lng = 121.356379;
+        //     const destinationUrl = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
+        //     window.open(destinationUrl, '_blank'); // 在新標籤頁打開導航
+        // }
+        function navigateTo() {
+            // 使用 Google Maps 的導航 URL 格式
+            const destinationUrl = "https://www.google.com/maps/dir/25.0806272,121.4611456/%E6%A1%83%E5%9C%92%E5%B8%82%E9%BE%9C%E5%B1%B1%E5%8D%80%E5%BF%A0%E7%BE%A9%E8%B7%AF%E4%BA%8C%E6%AE%B5118%E5%B7%B7%E7%A8%BB%E9%84%89%E6%9D%91%E5%AE%A2%E5%AE%B6%E8%8E%8A/@25.0635181,121.3665249,13z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x3442a0acbb167f6d:0xb741d37f1909d417!2m2!1d121.3570034!2d25.0424325?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D";
+            window.open(destinationUrl, '_blank'); // 在新標籤頁打開導航
         }
     </script>
 </body>
